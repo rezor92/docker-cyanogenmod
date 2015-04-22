@@ -17,7 +17,7 @@ The main working directory is a shared folder on the host system, so the Docker 
 * If an image does not exist, ```docker build``` is executed first
 
 ```
-git clone https://github.com/stucki/docker-cyanogenmod.git
+git clone https://github.com/rezor92/docker-cyanogenmod.git
 cd docker-cyanogenmod
 ./run.sh
 ```
@@ -27,7 +27,7 @@ The container uses "screen" to run the shell. This means that you will be able t
 ### How to build CyanogenMod for your device
 
 ```
-repo init -u git://github.com/CyanogenMod/android.git -b cm-12.0
+repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
 repo sync
 source build/envsetup.sh
 breakfast <device codename>   # example: breakfast grouper
