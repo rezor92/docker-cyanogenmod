@@ -33,24 +33,8 @@ RUN chmod a+x /home/cmbuild/bin/repo
 
 # local_manifest and roomservice
 RUN mkdir /home/cmbuild/android/.repo/local_manifests
-RUN echo "<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-<project name="CyanogenMod/android_device_oneplus_bacon" path="device/oneplus/bacon" remote="github" revision="cm-12.1" />
-<project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-12.1" />
-<project name="CyanogenMod/android_device_oppo_msm8974-common" path="device/oppo/msm8974-common" remote="github" revision="cm-12.1" />
-<project name="CyanogenMod/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-12.1" />
-<project name="CyanogenMod/android_kernel_oneplus_msm8974" path="kernel/oneplus/msm8974" remote="github" revision="cm-12.1" />
-<project name="TheMuppets/proprietary_vendor_oppo" path="vendor/oppo" remote="github" revision="cm-12.1" />
-<project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-12.1" />
-<project name="DonkeyCoyote/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="android-5.1"/>
-</manifest>" > /home/cmbuild/android/.repo/local_manifests/local_manifests.xml
-RUN echo "<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-<remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" />
-<project name="ArchiDroid/Toolchain" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" remote="github" revision="sabermod-4.8-arm-linux-androideabi" />
-<remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" />
-<project name="ArchiDroid/Toolchain" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" remote="github" revision="architoolchain-4.9-arm-linux-gnueabihf-cortex_a7_neon_vfpv4" />
-</manifest>" > /home/cmbuild/android/.repo/local_manifests/roomservice.xml
+RUN echo "<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<project name="CyanogenMod/android_device_oneplus_bacon" path="device/oneplus/bacon" remote="github" revision="cm-12.1" />\n<project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-12.1" />\n<project name="CyanogenMod/android_device_oppo_msm8974-common" path="device/oppo/msm8974-common" remote="github" revision="cm-12.1" />\n<project name="CyanogenMod/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-12.1" />\n<project name="CyanogenMod/android_kernel_oneplus_msm8974" path="kernel/oneplus/msm8974" remote="github" revision="cm-12.1" />\n<project name="TheMuppets/proprietary_vendor_oppo" path="vendor/oppo" remote="github" revision="cm-12.1" />\n<project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-12.1" />\n<project name="DonkeyCoyote/proprietary_vendor_lge" path="vendor/lge" remote="github" revision="android-5.1"/>\n</manifest>" > /home/cmbuild/android/.repo/local_manifests/local_manifests.xml
+RUN echo "<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" />\n<project name="ArchiDroid/Toolchain" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" remote="github" revision="sabermod-4.8-arm-linux-androideabi" />\n<remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" />\n<project name="ArchiDroid/Toolchain" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" remote="github" revision="architoolchain-4.9-arm-linux-gnueabihf-cortex_a7_neon_vfpv4" />\n</manifest>" > /home/cmbuild/android/.repo/local_manifests/roomservice.xml
 
 # Add sudo permission
 RUN echo "cmbuild ALL=NOPASSWD: ALL" > /etc/sudoers.d/cmbuild
