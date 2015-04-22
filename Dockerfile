@@ -47,6 +47,7 @@ RUN echo "source /etc/android-env-vars.sh" >> /etc/bash.bashrc
 VOLUME /home/cmbuild/android
 VOLUME /srv/ccache
 
+# Installation of libisl13 for Sabermod
 RUN wget http://launchpadlibrarian.net/191842424/libisl13_0.14-1_amd64.deb
 RUN dpkg -i libisl13_0.14-1_amd64.deb
 
